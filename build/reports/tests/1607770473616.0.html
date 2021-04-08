@@ -1,0 +1,240 @@
+<html><head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+
+    
+    <link rel="shortcut icon" type="image/x-icon" href="/resources/images/favicon.png">
+
+    <title>PetClinic :: a Spring Framework demonstration</title>
+
+    
+    
+    <link href="/resources/css/petclinic.css" rel="stylesheet">
+
+
+    
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Only datepicker is used -->
+    
+    <link href="/webjars/jquery-ui/1.12.1/jquery-ui.min.css" rel="stylesheet">
+    
+    <link href="/webjars/jquery-ui/1.12.1/jquery-ui.theme.min.css" rel="stylesheet">
+</head>
+<body>
+
+
+
+
+
+
+
+
+
+
+<nav class="navbar navbar-default" role="navigation">
+    <div class="container">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/"><span></span></a>
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#main-navbar">
+                <span class="sr-only"><os-p>Toggle navigation</os-p></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+        </div>
+        <div class="navbar-collapse collapse" id="main-navbar">
+            <ul class="nav navbar-nav navbar-right">
+
+                
+
+
+
+
+
+
+<li class="">
+    <a href="/" title="home page">
+        
+                    <span class="glyphicon glyphicon-home" aria-hidden="true"></span>
+                    <span>Home</span>
+                
+    </a>
+</li>
+
+
+                
+
+
+
+
+
+
+<li class="active">
+    <a href="/owners/find" title="find owners">
+        
+                    <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+                    <span>Find owners</span>
+                
+    </a>
+</li>
+
+
+                
+
+
+
+
+
+
+<li class="">
+    <a href="/vets" title="veterinarians">
+        
+                    <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+                    <span>Veterinarians</span>
+                
+    </a>
+</li>
+
+
+                
+
+
+
+
+
+
+<li class="">
+    <a href="/oups" title="trigger a RuntimeException to see how it is handled">
+        
+                    <span class="glyphicon glyphicon-warning-sign" aria-hidden="true"></span>
+                    <span>Error</span>
+                
+    </a>
+</li>
+
+
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid">
+    <div class="container xd-container">
+
+        <h2>
+            New  Pet
+        </h2>
+        <form id="pet" class="form-horizontal" action="/owners/33/pets/new" method="post"><input type="hidden" name="id" value="">
+            <div class="form-group has-feedback">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label">Owner</label>
+                    <div class="col-sm-10">
+                        Bernd Steiner</div>
+                </div>
+                
+
+
+
+
+
+
+    
+    
+    <div class="form-group ">
+        <label class="col-sm-2 control-label">Name</label>
+
+        <div class="col-sm-10">
+            <input id="name" name="name" class="form-control" type="text" value="">
+            
+            
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    
+    
+    <div class="form-group ">
+        <label class="col-sm-2 control-label">Birth Date</label>
+
+        <div class="col-sm-10">
+            <input id="birthDate" name="birthDate" class="form-control hasDatepicker" type="text" value="">
+            
+            
+        </div>
+    </div>
+
+<div class="control-group">
+                    
+
+
+
+
+
+
+
+
+    
+    
+    <div class="form-group ">
+        <label class="col-sm-2 control-label">Type </label>
+
+        <div class="col-sm-10">
+            <select id="type" name="type" class="form-control" size="5"><option value="bird">bird</option><option value="cat">cat</option><option value="dog">dog</option><option value="hamster">hamster</option><option value="lizard">lizard</option><option value="snake">snake</option></select>
+            
+            
+        </div>
+    </div>
+
+</div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button class="btn btn-default" type="submit">Add Pet</button>
+                        </div>
+            </div>
+        </form>
+
+<br>
+<br>
+<div class="container">
+    <div class="row">
+        <div class="col-12 text-center"><img src="/resources/images/spring-pivotal-logo.png" alt="Sponsored by Pivotal"></div>
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+<script src="/webjars/jquery/3.5.1/jquery.min.js"></script>
+
+
+
+<script src="/webjars/jquery-ui/1.12.1/jquery-ui.min.js"></script>
+
+
+
+<script src="/webjars/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<script>
+            $(function () {
+                $("#birthDate").datepicker({dateFormat: 'yy/mm/dd'});
+            });
+        </script>
+
+
+<div id="ui-datepicker-div" class="ui-datepicker ui-widget ui-widget-content ui-helper-clearfix ui-corner-all" style="position: absolute; top: 279px; left: 284.325px; z-index: 1; display: block;"><div class="ui-datepicker-header ui-widget-header ui-helper-clearfix ui-corner-all"><a class="ui-datepicker-prev ui-corner-all" data-handler="prev" data-event="click" title="Prev"><span class="ui-icon ui-icon-circle-triangle-w">Prev</span></a><a class="ui-datepicker-next ui-corner-all" data-handler="next" data-event="click" title="Next"><span class="ui-icon ui-icon-circle-triangle-e">Next</span></a><div class="ui-datepicker-title"><span class="ui-datepicker-month">March</span>&nbsp;<span class="ui-datepicker-year">2002</span></div></div><table class="ui-datepicker-calendar"><thead><tr><th scope="col" class="ui-datepicker-week-end"><span title="Sunday">Su</span></th><th scope="col"><span title="Monday">Mo</span></th><th scope="col"><span title="Tuesday">Tu</span></th><th scope="col"><span title="Wednesday">We</span></th><th scope="col"><span title="Thursday">Th</span></th><th scope="col"><span title="Friday">Fr</span></th><th scope="col" class="ui-datepicker-week-end"><span title="Saturday">Sa</span></th></tr></thead><tbody><tr><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">1</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">2</a></td></tr><tr><td class=" ui-datepicker-week-end ui-datepicker-days-cell-over  ui-datepicker-current-day" data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default ui-state-active ui-state-hover" href="#">3</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">4</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">5</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">6</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">7</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">8</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">9</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">10</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">11</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">12</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">13</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">14</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">15</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">16</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">17</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">18</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">19</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">20</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">21</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">22</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">23</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">24</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">25</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">26</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">27</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">28</a></td><td class=" " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">29</a></td><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">30</a></td></tr><tr><td class=" ui-datepicker-week-end " data-handler="selectDay" data-event="click" data-month="2" data-year="2002"><a class="ui-state-default" href="#">31</a></td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td><td class=" ui-datepicker-week-end ui-datepicker-other-month ui-datepicker-unselectable ui-state-disabled">&nbsp;</td></tr></tbody></table></div></body></html>
