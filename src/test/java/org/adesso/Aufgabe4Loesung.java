@@ -23,33 +23,33 @@ public class Aufgabe4Loesung {
         open("http://ad-schtes-dev01.test-server.ag:32772/");
     }
 
-    private SelenideElement lastNameInput = $(byName("lastName"));
-    private SelenideElement findOwnerTab = $(byTitle("find owners"));
-    private SelenideElement findOwnerBtn = $(byText("Find Owner"));
-    private SelenideElement addOwnerBtn = $(byText("Add Owner"));
-    private SelenideElement firstNameInput = $(byId("firstName"));
-    private SelenideElement addressInput = $(byId("address"));
-    private SelenideElement cityInput = $(byId("city"));
-    private SelenideElement telephoneInput = $(byId("telephone"));
-    private SelenideElement editOwnerBtn = $(byText("Edit Owner"));
-    private SelenideElement ownerInformationHeader = $(byText("Owner Information"));
-    private SelenideElement addNewPetBtn = $(byText("Add New Pet"));
-    private SelenideElement petNameInput = $(byId("name"));
-    private SelenideElement petBirthDateInput = $(byId("birthDate"));
-    private SelenideElement petTypeSelect = $(byId("type"));
-    private SelenideElement petsAndVisitsHeader = $(byText("Pets and Visits"));
-    private SelenideElement addPetBtn = $(byText("Add Pet"));
+    static SelenideElement lastNameInput = $(byName("lastName"));
+    static SelenideElement findOwnerTab = $(byTitle("find owners"));
+    static SelenideElement findOwnerBtn = $(byText("Find Owner"));
+    static SelenideElement addOwnerBtn = $(byText("Add Owner"));
+    static SelenideElement firstNameInput = $(byId("firstName"));
+    static SelenideElement addressInput = $(byId("address"));
+    static SelenideElement cityInput = $(byId("city"));
+    static SelenideElement telephoneInput = $(byId("telephone"));
+    static SelenideElement editOwnerBtn = $(byText("Edit Owner"));
+    static SelenideElement ownerInformationHeader = $(byText("Owner Information"));
+    static SelenideElement addNewPetBtn = $(byText("Add New Pet"));
+    static SelenideElement petNameInput = $(byId("name"));
+    static SelenideElement petBirthDateInput = $(byId("birthDate"));
+    static SelenideElement petTypeSelect = $(byId("type"));
+    static SelenideElement petsAndVisitsHeader = $(byText("Pets and Visits"));
+    static SelenideElement addPetBtn = $(byText("Add Pet"));
 
-      public void goToFindOwners(){                         
+      public static void goToFindOwners(){
         $(findOwnerTab).click();  
       }
 
-      public void searchOwner(String name){
+      public static void searchOwner(String name){
         $(lastNameInput).setValue(name);
         findOwnerBtn.click();
     }
 
-      public void addNewOwner(String firstName, String lastName, String address, String city, String telephone){
+      public static void addNewOwner(String firstName, String lastName, String address, String city, String telephone){
         $(firstNameInput).setValue(firstName);
         $(lastNameInput).setValue(lastName);
         $(addressInput).setValue(address);
@@ -58,15 +58,15 @@ public class Aufgabe4Loesung {
         $(addOwnerBtn).click();
     }
 
-      public void clickAddOwner(){
+      public static void clickAddOwner(){
         $(addOwnerBtn).click();
     }
 
-      public void goToAddNewPet(){
+      public static void goToAddNewPet(){
         $(addNewPetBtn).click();
     }
 
-      public void addNewPet(String name, String birthDate, String type) {
+      public static void addNewPet(String name, String birthDate, String type) {
         $(petNameInput).setValue(name);
         LocalDate dateFrom = LocalDate.parse(birthDate, DateTimeFormatter.ofPattern("dd.MM.yyyy"));
         DateTimeFormatter formatTo = DateTimeFormatter.ofPattern("yyyy/MM/dd");
@@ -78,7 +78,7 @@ public class Aufgabe4Loesung {
     }
 
  //  @Test
-    public void addEduarosPet(){
+    public static void addEduarosPet(){
         goToFindOwners();
         searchOwner("Rodriquez");
         goToAddNewPet();
@@ -88,7 +88,7 @@ public class Aufgabe4Loesung {
     }
 
  //   @Test
-    public void addHarry(){
+    public static void addHarry(){
         goToFindOwners();
         clickAddOwner();
         addNewOwner("Harry", "Potter", "Ligusterweg 12", "London", "123456");
@@ -97,7 +97,7 @@ public class Aufgabe4Loesung {
     }
 
  //   @Test
-    public void sucheEduardo(){
+    public static void sucheEduardo(){
         goToFindOwners();
         searchOwner("Rodriquez");
         $(byText("Owner Information")).shouldBe(visible);
@@ -105,7 +105,7 @@ public class Aufgabe4Loesung {
     }
 
   //  @Test
-    public void sucheDavis(){
+    public static void sucheDavis(){
         goToFindOwners();
         searchOwner("Davis");
         $(byText("Betty Davis")).shouldBe(visible);

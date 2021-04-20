@@ -1,10 +1,6 @@
 package org.adesso.pages;
 
 import com.codeborne.selenide.SelenideElement;
-import org.adesso.UseCasePetClinic;
-import org.openqa.selenium.By;
-
-import static com.codeborne.selenide.Condition.hidden;
 import static com.codeborne.selenide.Selectors.*;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Condition.visible;
